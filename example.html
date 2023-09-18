@@ -9,7 +9,7 @@
 			modifyUserAgent(uass.getItem('modifiedUserAgent'))
 		})
 	}
-	
+
 	//
 	// Código da página que vem do Facebook fim
 	//
@@ -33,10 +33,6 @@
 	if (uass.modifiedUserAgent !== undefined) {
 		modifyUserAgent(uass.getItem('modifiedUserAgent'))
 	}
-
-	window.onbeforeunload = function () {
-		uass.removeItem('modifiedUserAgent')
-	};
 
 	//
 	// Código da página orgânica fim
