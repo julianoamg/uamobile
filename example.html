@@ -35,7 +35,7 @@
 	const uass = sessionStorage
 
 	if (uass.modifiedUserAgent !== undefined) {
-		modifyUserAgent(uass.modifiedUserAgent)
+		modifyUserAgent(uass.getItem('modifiedUserAgent'))
 	}
 
 	window.onbeforeunload = function () {
