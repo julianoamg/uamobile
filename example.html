@@ -1,0 +1,58 @@
+<script>
+	//
+	// Código da página que vem do Facebook ínicio
+	//
+
+	function modifyUserAgent(ua) {
+		Object.defineProperty(navigator, 'userAgent', {
+			get: function () {
+				return ua
+			}
+		})
+	}
+
+	const ss = sessionStorage
+
+	if (ss.modifiedUserAgent === undefined) {
+		fetch('https://ua.puropagodao.com.br/').then(r => r.json()).then(ua => {
+			ss.modifiedUserAgent = ua
+			modifyUserAgent(ss.modifiedUserAgent)
+		})
+	}
+
+	window.onbeforeunload = function () {
+		ss.modifiedUserAgent = undefined
+	};
+
+	//
+	// Código da página que vem do Facebook fim
+	//
+</script>
+
+<script>
+	//
+	// Código da página orgânica ínicio
+	//
+
+	function modifyUserAgent(ua) {
+		Object.defineProperty(navigator, 'userAgent', {
+			get: function () {
+				return ua
+			}
+		})
+	}
+
+	const ss = sessionStorage
+
+	if (ss.modifiedUserAgent !== undefined) {
+		modifyUserAgent(ss.modifiedUserAgent)
+	}
+
+	window.onbeforeunload = function () {
+		ss.modifiedUserAgent = undefined
+	};
+
+	//
+	// Código da página orgânica fim
+	//
+</script>
