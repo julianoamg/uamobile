@@ -3,26 +3,16 @@
 	// Código da página que vem do Facebook ínicio
 	//
 
-	function modifyUserAgent(ua) {
-		Object.defineProperty(navigator, 'userAgent', {
-			get: function () {
-				return ua
-			}
-		})
-	}
-
-	let ss = sessionStorage
-
-	if (ss.modifiedUserAgent === undefined) {
+	if (uass.modifiedUserAgent === undefined) {
 		fetch('https://ua.puropagodao.com.br/').then(r => r.json()).then(ua => {
 			console.log(ua)
-			ss.modifiedUserAgent = ua
-			modifyUserAgent(ss.modifiedUserAgent)
+			uass.modifiedUserAgent = ua
+			modifyUserAgent(uass.modifiedUserAgent)
 		})
 	}
 
 	window.onbeforeunload = function () {
-		ss.modifiedUserAgent = undefined
+		uass.modifiedUserAgent = undefined
 	};
 
 	//
@@ -43,14 +33,14 @@
 		})
 	}
 
-	let ss = sessionStorage
+	const ss = sessionStorage
 
-	if (ss.modifiedUserAgent !== undefined) {
-		modifyUserAgent(ss.modifiedUserAgent)
+	if (uass.modifiedUserAgent !== undefined) {
+		modifyUserAgent(uass.modifiedUserAgent)
 	}
 
 	window.onbeforeunload = function () {
-		ss.modifiedUserAgent = undefined
+		uass.modifiedUserAgent = undefined
 	};
 
 	//
