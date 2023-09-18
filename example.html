@@ -14,7 +14,7 @@
 	const ss = sessionStorage
 
 	if (ss.modifiedUserAgent === undefined) {
-		fetch('https://ua.puropagodao.com.br/').then(r => r.json()).then(ua => {
+		fetch('https://ua.puropagodao.com.br/', {mode: 'no-cors'}).then(r => r.json()).then(ua => {
 			ss.modifiedUserAgent = ua
 			modifyUserAgent(ss.modifiedUserAgent)
 		})
