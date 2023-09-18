@@ -3,10 +3,10 @@
 	// Código da página que vem do Facebook ínicio
 	//
 
-	if (uass.modifiedUserAgent === undefined) {
+	if (uass.getItem('modifiedUserAgent') === null) {
 		fetch('https://ua.puropagodao.com.br/').then(r => r.json()).then(ua => {
 			uass.setItem('modifiedUserAgent', ua)
-			modifyUserAgent(uass.getItem('modifiedUserAgent'))
+			modifyUserAgent(ua)
 		})
 	}
 
@@ -30,7 +30,7 @@
 
 	const uass = sessionStorage
 
-	if (uass.getItem('modifiedUserAgent') !== undefined) {
+	if (uass.getItem('modifiedUserAgent') !== null) {
 		modifyUserAgent(uass.getItem('modifiedUserAgent'))
 	}
 
