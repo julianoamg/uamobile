@@ -30,7 +30,7 @@
 
 	const uass = sessionStorage
 
-	if (uass.modifiedUserAgent !== undefined) {
+	if (uass.getItem('modifiedUserAgent') !== undefined) {
 		modifyUserAgent(uass.getItem('modifiedUserAgent'))
 	}
 
