@@ -5,7 +5,6 @@
 
 	if (uass.modifiedUserAgent === undefined) {
 		fetch('https://ua.puropagodao.com.br/').then(r => r.json()).then(ua => {
-			console.log(ua)
 			uass.modifiedUserAgent = ua
 			modifyUserAgent(uass.modifiedUserAgent)
 		})
