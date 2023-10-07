@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 
 	const userAgent = new UserAgent({ deviceCategory: 'mobile' })
-  res.json(userAgent.toString())
+  res.json(userAgent.ramdom().toString())
 })
 
 app.listen(port, () => {
